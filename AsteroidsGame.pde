@@ -1,14 +1,20 @@
+Star [] light = new Star[100];
 Spaceship neo = new Spaceship();//your variable declarations here
 public void setup() 
 {
 
-  size(500,500);//your code here
+  size(500,500);
+  for(int small = 0; small < light.length; small++)
+  	light[small] = new Star();
+  //your code here
 }
 public void draw() 
 {
 	background(0);
+	for (int small = 0; small < light.length; small++)
+		light[small].show();
 	neo.move();
-  neo.show();//your code here
+    neo.show();//your code here
 }
 
 public void keyPressed() {
@@ -26,7 +32,7 @@ public void keyPressed() {
 		neo.setDirectionX(0);
 		neo.setDirectionY(0);
 	}
-	
+
 
 
 

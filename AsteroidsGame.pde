@@ -1,3 +1,4 @@
+Asteroid [] rock = new Asteroid[20];
 Star [] light = new Star[100];
 Spaceship neo = new Spaceship();//your variable declarations here
 public void setup() 
@@ -6,16 +7,21 @@ public void setup()
   size(500,500);
   for(int small = 0; small < light.length; small++)
   	light[small] = new Star();
-  //your code here
+   for(int belt = 0; belt < rock.length; belt++)
+   	rock[belt] = new Asteroid();//your code here
 }
 public void draw() 
 {
 	background(0);
 	for (int small = 0; small < light.length; small++)
 		light[small].show();
+	for(int belt = 0; belt < rock.length; belt++){
+		rock[belt].move();
+		rock[belt].show();
+	}
 	neo.move();
     neo.show();//your code here
-}
+   }
 
 public void keyPressed() {
 	if(key == 'v')

@@ -1,4 +1,6 @@
-Asteroid [] rock = new Asteroid[20];
+ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
+//Asteroid rock = new Asteroid(100);
+//theList.add(rock);
 Star [] light = new Star[100];
 Spaceship neo = new Spaceship();//your variable declarations here
 public void setup() 
@@ -7,8 +9,8 @@ public void setup()
   size(500,500);
   for(int small = 0; small < light.length; small++)
   	light[small] = new Star();
-   for(int belt = 0; belt < rock.length; belt++)
-   	rock[belt] = new Asteroid();//your code here
+   for(int belt = 0; belt < rock.size(); belt++)
+   	rock.add(new Asteroid());//your code here
 }
 public void draw() 
 {

@@ -1,6 +1,4 @@
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
-//Asteroid rock = new Asteroid(100);
-//theList.add(rock);
 Star [] light = new Star[100];
 Spaceship neo = new Spaceship();//your variable declarations here
 public void setup() 
@@ -9,7 +7,7 @@ public void setup()
   size(500,500);
   for(int small = 0; small < light.length; small++)
   	light[small] = new Star();
-   for(int belt = 0; belt < rock.size(); belt++)
+   for(int belt = 0; belt < 30; belt++)
    	rock.add(new Asteroid());//your code here
 }
 public void draw() 
@@ -17,9 +15,12 @@ public void draw()
 	background(0);
 	for (int small = 0; small < light.length; small++)
 		light[small].show();
-	for(int belt = 0; belt < rock.length; belt++){
-		rock[belt].move();
-		rock[belt].show();
+	for(int belt = 0; belt < rock.size(); belt++){
+		rock.get(belt).move();
+		rock.get(belt).show();
+		float d = dist(neo.getX(), neo.getY(), rock.get(belt).getX(), rock.get(belt).getY());
+		if(d < 20) 
+		rock.remove(belt);
 	}
 	neo.move();
     neo.show();//your code here
